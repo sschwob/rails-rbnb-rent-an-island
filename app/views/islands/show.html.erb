@@ -1,0 +1,12 @@
+<h1><%= @island.name %></h1>
+<div class="container">
+  <h4><%= @island.country %></h4>
+  <h4><%= @island.price_per_day %></h4>
+  <p><%= @island.description %></p>
+  <% if @island.photo.attached? %>
+    <%= cl_image_tag @island.photo.key %>
+  <% else %>
+    <%= image_tag "missing_img.jpg" %>
+  <% end %>
+</div>
+<%= link_to "Back", islands_path %>
