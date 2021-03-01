@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_145649) do
+ActiveRecord::Schema.define(version: 2021_03_01_155251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_145649) do
     t.string "name"
     t.string "country"
     t.string "description"
-    t.integer "latitude"
-    t.integer "longitude"
+    t.string "latitude"
+    t.string "longitude"
     t.integer "price_per_day"
     t.integer "area"
     t.bigint "user_id", null: false
