@@ -1,16 +1,28 @@
-<div class="container">
-	<h1>My islands</h1>
-	
-	<% @user_islands.each do |island| %>
-    <% if island.photo.attached? %>
-      <%= cl_image_tag island.photo.key %>
-    <% else %>
-        <%= image_tag "missing_img.jpg" %>
-    <% end %>
-    <h3><%= island.name %></h3>
-    <h4><%= island.country %></h4>
-    <h4><%= island.price_per_day %></h4>
-    <p><%= island.description %></p>
-    <%= link_to island.name, island_path(island)%>
+<div class="container mt-4">
+  <h1>My islands</h1>
+  <% @user_islands.each do |island| %>
+    <div class="user-island-card">
+      <div class="user-island-card-top">
+        <div class="user-island-card-img">
+          <% if island.photo.attached? %>
+            <%= cl_image_tag island.photo.key %>
+          <% else %>
+            <%= image_tag "missing_img.jpg" %>
+          <% end %>
+        </div>
+        <div class="user-island-card-content">
+          <h2><%= island.name %></h2>
+          <h4> <%= island.country %></h4>
+          <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, "#", class: "user-island-card-edit", title: 'Edit', data: { toggle: 'tooltip' } %>
+          <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, "#", class: "user-island-card-delete", title: 'Delete', data: { toggle: 'tooltip' } %>
+          <span class="user-island-card-location"><i class="fas fa-compass"></i> <%= island.latitude %>, <%= island.longitude %></span>
+          <span class="user-island-card-area"><i class="fas fa-chart-area"></i> <%= island.area %> km²</span>
+          <span class="user-island-card-price"><i class="fas fa-dollar-sign"></i><%= island.price_per_day %> / Day</span>
+        </div>
+      </div>
+      <div class="user-island-card-bottom">
+        <p><%= island.description %></p>
+      </div>
+    </div>
   <% end %>
 </div>
