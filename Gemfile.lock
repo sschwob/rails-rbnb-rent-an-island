@@ -120,11 +120,8 @@ GEM
     msgpack (1.4.2)
     nio4r (2.5.5)
     nokogiri (1.11.1-x86_64-darwin)
-<<<<<<< HEAD
-=======
       racc (~> 1.4)
     nokogiri (1.11.1-x86_64-linux)
->>>>>>> 504624d6f6cffa32b298b8b2bb23039ec617c556
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -238,7 +235,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  x86_64-darwin-19
+  x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
@@ -271,4 +268,5 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
+   2.2.11
    2.2.5
