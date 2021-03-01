@@ -1,3 +1,16 @@
 <div class="container">
-    <h1>My islands</h1>
+	<h1>My islands</h1>
+	
+	<% @user_islands.each do |island| %>
+    <% if island.photo.attached? %>
+      <%= cl_image_tag island.photo.key %>
+    <% else %>
+        <%= image_tag "missing_img.jpg" %>
+    <% end %>
+    <h3><%= island.name %></h3>
+    <h4><%= island.country %></h4>
+    <h4><%= island.price_per_day %></h4>
+    <p><%= island.description %></p>
+    <%= link_to island.name, island_path(island)%>
+  <% end %>
 </div>
