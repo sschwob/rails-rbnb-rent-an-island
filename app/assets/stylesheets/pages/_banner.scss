@@ -1,7 +1,7 @@
-#homepage {
-  background-image: asset-url('banner_island.jpg');
+#banner {
+  background-image: url('https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   width: 100%;
-  height: calc(100vh - 70px);
+  height: 446px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,16 +10,16 @@
   justify-content: space-between;
 }
 
-#home-title, #home-h2 {
+#banner-title, #banner-h2 {
   width: 100%;
   color: white;
   text-align: center;
 }
 
-#home-title {
+#banner-title {
   padding: 100px 50px 0 50px;
 }
 
-#home-h2 {
+#banner-h2 {
   margin-bottom: 100px;
 }
