@@ -2,14 +2,17 @@
   <div class="cards">
     <% @islands.each do |island| %>
       <div class="card">
+        <%= link_to island_path(island) do %>
         <% if island.photo.attached?%>
-          <%= cl_image_tag island.photo.key %>
+          <%= cl_image_tag island.photo.key, class: "w-100" %>
         <% else %>
-          <%= image_tag "missing_img.jpg" %>
+          <%= image_tag "missing_img.jpg",class: "w-100" %>
         <% end %>
+        <div class="info">
         <h4><%= island.name %> - <%= island.country %> </h4>
-        <h5><strong><%= island.price_per_day %></strong>/day</h5>
-        <%= link_to island.name, island_path(island)%>
+        <h5><%= island.price_per_day %>/day</h5>
+        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
