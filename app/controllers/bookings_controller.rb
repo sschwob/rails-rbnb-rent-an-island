@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @island = Island.find(params[:island_id])
   end
 
   def create
@@ -23,7 +24,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :state)
   end
 
 end
