@@ -1,13 +1,18 @@
 <div class="container">
-  <div class="information">
-    <h1><%= @island.name %></h1>
-    <h2><%= @island.price_per_day %> $ / day</h2>
+  <div>
+    <div class="information">
+      <h1><%= @island.name %></h1>
+      <h2><%= @island.price_per_day %> $ / day</h2>
+    </div>
+    <p><%= @island.description %></p>
+    <% if @island.photo.attached? %>
+      <%= cl_image_tag @island.photo.key %>
+    <% else %>
+      <%= image_tag "missing_img.jpg" %>
+    <% end %>
   </div>
-  <p><%= @island.description %></p>
-  <% if @island.photo.attached? %>
-    <%= cl_image_tag @island.photo.key %>
-  <% else %>
-    <%= image_tag "missing_img.jpg" %>
-  <% end %>
-</div>
+
 <%= link_to "Back", islands_path %>
+<br>
+<%= link_to "Book this island", new_island_booking_path(@island) %>
+</div>
