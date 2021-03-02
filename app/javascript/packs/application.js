@@ -23,12 +23,15 @@ import "bootstrap";
 
 // Internal imports
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
   });
+
+  initFlatpickr();
   
   initSweetalert('#sweet-alert-delete', {
     title: "Are you sure?",
