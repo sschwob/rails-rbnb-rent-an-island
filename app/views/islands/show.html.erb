@@ -1,18 +1,22 @@
+<br>
+
+<%= link_to "Back", islands_path, class: "button back" %>
+
 <div class="container">
-  <div>
-    <div class="information">
-      <h1><%= @island.name %></h1>
-      <h2><%= @island.price_per_day %> $ / day</h2>
-    </div>
-    <p><%= @island.description %></p>
+
+  <h1><%= @island.name %></h1>
+  <p><%= @island.description %></p>
+
+  <div class="image-container">
     <% if @island.photo.attached? %>
       <%= cl_image_tag @island.photo.key %>
     <% else %>
-      <%= image_tag "missing_img.jpg" %>
+      <%= image_tag "missing_img.jpg", id: "image"%>
     <% end %>
   </div>
-
-<%= link_to "Back", islands_path %>
-<br>
-<%= link_to "Book this island", new_island_booking_path(@island) %>
+  <div class="booking">
+    <h3><%= @island.price_per_day %> $ / day</h3>
+    <%= link_to "Book this island", new_island_booking_path(@island), class: "button book" %>
+  </div>
 </div>
+
