@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def index_user
     @user_bookings = current_user.bookings
+    @user_islands = current_user.islands
   end
 
   def new
@@ -19,6 +20,24 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.update(state: "Accepted")
+    redirect_to user_bookings_path, notice: "Booking Accepted!"
+  end
+  
+  def refuse
+    @booking = Booking.find(params[:id])
+    @booking.update(state: "Refused")
+    redirect_to user_bookings_path, notice: "Booking Refused!"
+  end
+
+  def cancel
+    @booking = Booking.find(params[:id])
+    @booking.update(state: "Canceled")
+    redirect_to user_bookings_path, notice: "Booking Canceled!"
   end
 
   private
