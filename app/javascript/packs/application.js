@@ -24,6 +24,7 @@ import "bootstrap";
 // Internal imports
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { searchFlagImg } from "../plugins/flags";
 
 document.addEventListener('turbolinks:load', () => {
   
@@ -45,5 +46,7 @@ document.addEventListener('turbolinks:load', () => {
       link.click();
     }
   });
+
+  searchFlagImg();
 
 });
