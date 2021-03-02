@@ -1,14 +1,16 @@
-<div class="container">
-  <% @islands.each do |island| %>
-    <% if island.photo.attached? %>
-         <%= cl_image_tag island.photo.key %>
+<div class="content">
+  <div class="cards">
+    <% @islands.each do |island| %>
+      <div class="card">
+        <% if island.photo.attached?%>
+          <%= cl_image_tag island.photo.key %>
         <% else %>
           <%= image_tag "missing_img.jpg" %>
+        <% end %>
+        <h4><%= island.name %> - <%= island.country %> </h4>
+        <h5><strong><%= island.price_per_day %></strong>/day</h5>
+        <%= link_to island.name, island_path(island)%>
+      </div>
     <% end %>
-    <h3><%= island.name %></h3>
-    <h4><%= island.country %></h4>
-    <h4><%= island.price_per_day %></h4>
-    <p><%= island.description %></p>
-    <%= link_to island.name, island_path(island)%>
-  <% end %>
+  </div>
 </div>
