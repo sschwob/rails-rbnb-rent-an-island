@@ -1,12 +1,63 @@
-<div class="container mt-3">
-  <h1>My bookings</h1>
-  
-  <% @user_bookings.each do |booking| %>
-    <div class="border my-3">
-      <h3>Booking for the island <%= booking.island.name %></h3>
-      from <%= booking.start_date %> to <%= booking.end_date %>
-      <br>
-      State : <%= booking.state %>
+<div id="bookings-index" class="container">
+
+  <% if current_user.islands != [] %>
+    <div id="user-islands-bookings">
+      <h3>My islands bookings</h3>
+      <div id="user-islands-bookings-list">
+        <% @user_islands.each do |island| %>
+          <div class="island-bookings">
+            <h6><strong><%= island.name %></strong></h6>
+            <% if island.bookings != [] %>
+              <% island.bookings.each do |booking| %>
+                <div class="island-booking">
+                  <strong><%= booking.user.username %></strong> has booked <strong><%= island.name %></strong> :
+                  <br>
+                  <i class="fas fa-calendar-alt"></i> from <%= booking.start_date %> to <%= booking.end_date %>
+                  <br>
+                  Length of stay : <%= (booking.end_date - booking.start_date).ceil %> days
+                  <br>
+                  Price per day : <i class="fas fa-dollar-sign"></i> <%= booking.island.price_per_day %>
+                  <br>
+                  Total price : <i class="fas fa-dollar-sign"></i> <%= (booking.end_date - booking.start_date).ceil * booking.island.price_per_day %>
+                  <br>
+                  <span>State : <%= booking.state %></span>
+                  <% if booking.state == "waiting" %>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times-circle"></i>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="island-booking-no"><p>No bookings for the island <strong><%= island.name %></strong> yet</p></div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   <% end %>
+
+  <div id="user-bookings">
+    <h3>My bookings</h3>
+    <% if current_user.bookings != [] %>
+    <div id="user-bookings-list">
+      <% @user_bookings.each do |booking| %>
+        <div class="user-booking">
+          <h6>Booking for the island <strong><%= booking.island.name %></strong> | Owner : <strong><%= booking.island.user.username %></strong></h6>
+          <i class="fas fa-calendar-alt"></i> from <%= booking.start_date %> to <%= booking.end_date %>
+          <br>
+          Length of stay : <%= (booking.end_date - booking.start_date).ceil %> days
+          <br>
+          Price per day : <i class="fas fa-dollar-sign"></i> <%= booking.island.price_per_day %>
+          <br>
+          Total price : <i class="fas fa-dollar-sign"></i> <%= (booking.end_date - booking.start_date).ceil * booking.island.price_per_day %>
+          <br>
+          State : <%= booking.state %>
+        </div>
+      <% end %>
+    </div>
+    <% else %>
+      <p>You haven't made a booking yet</p>
+    <% end %>
+  </div>
+
 </div>

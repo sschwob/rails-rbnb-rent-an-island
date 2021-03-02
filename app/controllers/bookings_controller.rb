@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def index_user
     @user_bookings = current_user.bookings
+    @user_islands = current_user.islands
   end
 
   def new
