@@ -3,14 +3,14 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+import Rails from "@rails/ujs";
+import Turbolinks from "turbolinks";
+import * as ActiveStorage from "@rails/activestorage";
+import "channels";
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+Rails.start();
+Turbolinks.start();
+ActiveStorage.start();
 
 
 // ----------------------------------------------------
@@ -21,8 +21,8 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// Internal imports
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   
@@ -30,4 +30,17 @@ document.addEventListener('turbolinks:load', () => {
     $('[data-toggle="tooltip"]').tooltip(); 
   });
   
+  initSweetalert('#sweet-alert-delete', {
+    title: "Are you sure?",
+    text: "This action cannot be reversed",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#delete-island');
+      link.click();
+    }
+  });
+
 });
