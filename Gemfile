@@ -34,7 +34,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'country_select'
 
