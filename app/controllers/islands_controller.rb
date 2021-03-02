@@ -15,6 +15,7 @@ class IslandsController < ApplicationController
 
   def create
     @island = Island.new(island_params)
+    @island.user = current_user
     if @island.save
       redirect_to island_path(@island)
     else
