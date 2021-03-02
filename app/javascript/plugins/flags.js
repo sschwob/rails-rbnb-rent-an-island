@@ -1,5 +1,5 @@
 const searchFlagImg = () => {
-  const countries = document.querySelectorAll('.country');
+  const countries = document.querySelectorAll('.country-name');
 
   countries.forEach((country) => {
     const countryName = country.innerText
