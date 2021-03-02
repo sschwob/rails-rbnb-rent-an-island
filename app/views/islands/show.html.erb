@@ -18,5 +18,10 @@
     <h3><%= @island.price_per_day %> $ / day</h3>
     <%= link_to "Book this island", new_island_booking_path(@island), class: "button book" %>
   </div>
+  <%= link_to "Back", islands_path %>
+  <br>
+  <% if current_user != @island.user %>
+    <%= link_to "Book this island", new_island_booking_path(@island) %>
+  <% end %>
 </div>
 

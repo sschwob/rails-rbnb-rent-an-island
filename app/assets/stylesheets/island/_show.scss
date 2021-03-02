@@ -1,7 +1,3 @@
-p {
-  color: #a5a5a5;
-}
-
 .booking {
   border: 1px solid rgb(221, 221, 221);
   border-radius: 12px;
@@ -44,4 +40,10 @@ p {
 .buttons {
   display: flex;
   justify-content: space-around;
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
 }
