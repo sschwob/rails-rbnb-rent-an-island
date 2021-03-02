@@ -22,8 +22,12 @@
                   <br>
                   <span>State : <%= booking.state %></span>
                   <% if booking.state == "waiting" %>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-times-circle"></i>
+                    <%= link_to accept_booking_path(booking), method: :patch, title: 'Accept booking', data: { toggle: 'tooltip', confirm: "Are you sure?" } do %>
+                      <i class="fas fa-check-circle accept-booking"></i>
+                    <% end %>
+                    <%= link_to refuse_booking_path(booking), method: :patch, title: 'Refuse booking', data: { toggle: 'tooltip', confirm: "Are you sure?" } do %>
+                      <i class="fas fa-times-circle refuse-booking"></i>
+                    <% end %>
                   <% end %>
                 </div>
               <% end %>
@@ -51,7 +55,12 @@
           <br>
           Total price : <i class="fas fa-dollar-sign"></i> <%= (booking.end_date - booking.start_date).ceil * booking.island.price_per_day %>
           <br>
-          State : <%= booking.state %>
+          <span>State : <%= booking.state %></span>
+          <% if booking.state == "waiting" %>
+            <%= link_to cancel_booking_path(booking), method: :patch, title: 'Cancel booking', data: { toggle: 'tooltip', confirm: "Are you sure?" } do %>
+              <i class="fas fa-times-circle cancel-booking"></i>
+            <% end %>
+          <% end %>
         </div>
       <% end %>
     </div>
