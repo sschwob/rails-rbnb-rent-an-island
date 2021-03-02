@@ -1,15 +1,21 @@
 .button {
-  background-color: #F7CE5B;
-  color: #999999;
-  border-radius: 4px;
+  background-color: #8561C1;
+  color: white;
+  border-radius: 6px;
   padding: 8px 16px;
-  border: 1px solid #999999;
   font-size: 16px;
+  &:hover {
+      transition: 2s;
+      border-radius: 1px;
+      background-color: #c3a6f4;
+      color: #8561C1;
+    }
 }
 
 .back {
   padding: 10px 20px;
   border-radius: 50px;
-  opacity: 0.6;
+  border: 1px solid white;
+  margin: 0px 20px;
 }
 
