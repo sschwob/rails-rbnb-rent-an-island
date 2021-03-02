@@ -4,19 +4,20 @@
 
 <div class="container">
 
-  <h1><%= @island.name %></h1>
+  <h1 class="title"><%= @island.name %></h1>
   <p><%= @island.description %></p>
-
-  <div class="image-container">
+  <div class="row">
+  <div class="col-12 lg-6 col-xl-7 image-container">
     <% if @island.photo.attached? %>
       <%= cl_image_tag @island.photo.key %>
     <% else %>
       <%= image_tag "missing_img.jpg", id: "image"%>
     <% end %>
   </div>
-  <div class="booking">
+  <div class="col-6 lg-6 col-xl-5 booking">
     <h3><%= @island.price_per_day %> $ / day</h3>
     <%= link_to "Book this island", new_island_booking_path(@island), class: "button book" %>
+  </div>
   </div>
 </div>
 

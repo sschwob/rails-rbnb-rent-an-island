@@ -1,11 +1,16 @@
+.title {
+  margin-top: 20px;
+}
+
 .booking {
   border: 1px solid rgb(221, 221, 221);
   border-radius: 12px;
   padding: 24px;
   display: block;
-  width: 400px;
+  height: 100px;
   box-shadow: #a5a5a5 0px 6px 16px;
-  margin: 0 0 0 auto;
+  margin: 15px 0 0 auto;
+  padding-top: 16px;
 }
 
 .image-container {
@@ -37,10 +42,6 @@
   }
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-around;
-}
 
 .information {
   display: flex;
