@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container pt-3 mb-3">
   <h1>My islands</h1>
   <% @user_islands.each do |island| %>
     <div class="user-island-card">
@@ -12,7 +12,7 @@
         </div>
         <div class="user-island-card-content">
           <h2><%= island.name %></h2>
-          <h4 class="country"><%= island.country %><span class="country-flag"></span></h4>
+          <h4 class="country-name"><%= island.country %><span class="country-flag"></span></h4>
           <%= link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_island_path(island), class: "user-island-card-edit", title: 'Edit', data: { toggle: 'tooltip' } %>
           <%# <i id="sweet-alert-delete" class="fas fa-trash-alt user-island-card-delete", title='Delete', data-toggle='tooltip'></i> %>
           <%#= link_to "", island_path(island), method: :delete, id: "delete-island", class: "hidden" %>

@@ -1,6 +1,6 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin: 24px;
 }
@@ -20,6 +20,9 @@
 .card {
   border-radius: 8px;
   overflow: hidden;
+    > a {
+      cursor: zoom-in;
+    }
     h4 {
       padding-top: 16px;
       padding-left: 20px
