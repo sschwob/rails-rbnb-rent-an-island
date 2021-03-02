@@ -1,4 +1,12 @@
-<div class="container">
+<div class="container mt-3">
   <h1>My bookings</h1>
-  <h2>TODO</h2>
+  
+  <% @user_bookings.each do |booking| %>
+    <div class="border my-3">
+      <h3>Booking for the island <%= booking.island.name %></h3>
+      from <%= booking.start_date %> to <%= booking.end_date %>
+      <br>
+      State : <%= booking.state %>
+    </div>
+  <% end %>
 </div>

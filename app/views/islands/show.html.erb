@@ -14,5 +14,7 @@
 
 <%= link_to "Back", islands_path %>
 <br>
-<%= link_to "Book this island", new_island_booking_path(@island) %>
+<% if current_user != @island.user %>
+  <%= link_to "Book this island", new_island_booking_path(@island) %>
+<% end %>
 </div>
