@@ -12,10 +12,13 @@
 @import "components/index";
 @import "pages/index";
 
+// form design
+@import "components/form";
+
 a {
   text-decoration: none !important;
   color: inherit;
-  
+
   &:hover {
     color:inherit;
   }
