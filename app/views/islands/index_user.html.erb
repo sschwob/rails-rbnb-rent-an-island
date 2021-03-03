@@ -4,8 +4,8 @@
     <div class="user-island-card">
       <div class="user-island-card-top">
         <div class="user-island-card-img">
-          <% if island.photo.attached? %>
-            <%= cl_image_tag island.photo.key %>
+          <% if island.photos.attached? %>
+            <%= cl_image_tag island.photos[0].key %>
           <% else %>
             <%= image_tag "missing_img.jpg" %>
           <% end %>
