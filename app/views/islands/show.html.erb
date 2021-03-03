@@ -1,23 +1,78 @@
-<br>
+<div id="show-island-container">
+  <div id="show-island-images">
+    <div id="show-island-image-big">
+    <h1><%= @island.name %></h1>
+      <% if @island.photos.attached?%>
+        <%= cl_image_tag island.photos[0].key %>
+      <% else %>
+        <%= image_tag "missing_img.jpg", id: "image"%>
+      <% end %>
+    </div>
 
-<%= link_to "Back", islands_path, class: "button back" %>
+    <div id="show-island-images-small">
+        <div class="show-island-image-small-container">
+          <% if @island.photos.attached?%>
+            <%= cl_image_tag island.photos[1].key %>
+          <% else %>
+            <%= image_tag "missing_img.jpg", id: "image"%>
+          <% end %>
+        </div>
+        <div class="show-island-image-small-container">
+          <% if @island.photos.attached?%>
+            <%= cl_image_tag island.photos[2].key %>
+          <% else %>
+            <%= image_tag "missing_img.jpg", id: "image"%>
+          <% end %>
+        </div>
+        <div class="show-island-image-small-container">
+          <% if @island.photos.attached?%>
+            <%= cl_image_tag island.photos[3].key %>
+          <% else %>
+            <%= image_tag "missing_img.jpg", id: "image"%>
+          <% end %>
+        </div>
+        <div class="show-island-image-small-container">
+          <% if @island.photos.attached?%>
+            <%= cl_image_tag island.photos[4].key %>
+          <% else %>
+            <%= image_tag "missing_img.jpg", id: "image"%>
+          <% end %>
+        </div>
+    </div>
+  </div>
 
-<div class="container">
+  <div id="show-island-infos-container">
+    <div id="show-island-infos">
+      <h4><%= @island.name %> - <span class="country-name"><%= @island.country %><i class="country-flag"></i></span></h4>
+      <span>Owner: <strong><%= @island.user.username %></strong></span>
+      <div id="show-island-infos-content">
+        <%= @island.description %>
+      </div>
+      <div id="show-island-more-infos">
+      More infos : <br>
+      <i class="fas fa-chart-area"></i> <%= @island.area %> km²
+      <br>
+      <i class="fas fa-compass"></i> <%= @island.latitude %>, <%= @island.longitude %>
+      </div>
+    </div>
+    
+    <div id="show-island-booking-form">
+      <span>Select dates to see the price: <i class="fas fa-dollar-sign"> <%= @island.price_per_day %> / day</i></span>
+      <%= simple_form_for([@island, @booking]) do |f| %>
+        <div id="booking-form-dates">
+          <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" }  %>
+          <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
+        </div>
+        <div id="booking-form-bottom">
+          <div id="booking-form-infos">
+            Length of stay : <%= 0 %> days <br>
+            Total price : <i class="fas fa-dollar-sign"></i> <%= 0 * @island.price_per_day %>
+          </div>
+          <%= f.submit id: 'btn-submit-booking' %>
+        </div>
 
-  <h1 class="title"><%= @island.name %></h1>
-  <p><%= @island.description %></p>
-  <div class="row">
-  <div class="col-12 lg-6 col-xl-7 image-container">
-    <% if @island.photo.attached? %>
-      <%= cl_image_tag @island.photo.key %>
-    <% else %>
-      <%= image_tag "missing_img.jpg", id: "image"%>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <div class="col-6 lg-6 col-xl-5 booking">
-    <h3><%= @island.price_per_day %> $ / day</h3>
-    <%= link_to "Book this island", new_island_booking_path(@island), class: "button book" %>
-  </div>
-  </div>
+
 </div>
-
