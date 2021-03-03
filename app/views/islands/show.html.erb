@@ -3,7 +3,7 @@
     <div id="show-island-image-big">
     <h1><%= @island.name %></h1>
       <% if @island.photos.attached?%>
-        <%= cl_image_tag island.photos[0].key %>
+        <%= cl_image_tag @island.photos[0].key %>
       <% else %>
         <%= image_tag "missing_img.jpg", id: "image"%>
       <% end %>
@@ -11,29 +11,29 @@
 
     <div id="show-island-images-small">
         <div class="show-island-image-small-container">
-          <% if @island.photos.attached?%>
-            <%= cl_image_tag island.photos[1].key %>
+          <% if @island.photos[1] != nil %>
+            <%= cl_image_tag @island.photos[1].key %>
           <% else %>
             <%= image_tag "missing_img.jpg", id: "image"%>
           <% end %>
         </div>
         <div class="show-island-image-small-container">
-          <% if @island.photos.attached?%>
-            <%= cl_image_tag island.photos[2].key %>
+          <% if @island.photos[2] != nil %>
+            <%= cl_image_tag @island.photos[2].key %>
           <% else %>
             <%= image_tag "missing_img.jpg", id: "image"%>
           <% end %>
         </div>
         <div class="show-island-image-small-container">
-          <% if @island.photos.attached?%>
-            <%= cl_image_tag island.photos[3].key %>
+          <% if @island.photos[3] != nil %>
+            <%= cl_image_tag @island.photos[3].key %>
           <% else %>
             <%= image_tag "missing_img.jpg", id: "image"%>
           <% end %>
         </div>
         <div class="show-island-image-small-container">
-          <% if @island.photos.attached?%>
-            <%= cl_image_tag island.photos[4].key %>
+          <% if @island.photos[4] != nil %>
+            <%= cl_image_tag @island.photos[4].key %>
           <% else %>
             <%= image_tag "missing_img.jpg", id: "image"%>
           <% end %>
