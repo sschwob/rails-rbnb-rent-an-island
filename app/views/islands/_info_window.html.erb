@@ -1,0 +1,9 @@
+<div class="pop-up">
+  <h2><%= island.name %> - <%= island.country %></h2>
+  <br>
+  <% if island.photos.attached? %>
+    <%= cl_image_tag island.photo[0].key, class: "pop-up-image" %>
+  <% else %>
+    <%= image_tag "missing_img.jpg", id: "image", class: "pop-up-image"%>
+  <% end %>
+</div>

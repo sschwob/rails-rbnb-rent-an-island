@@ -1,19 +1,30 @@
-<div class="content">
-  <div class="cards">
+
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-7">
+    <div class="index-title">
+      <h1>Islands</h1>
+    </div>
     <% @islands.each do |island| %>
-      <div class="card">
+      <div class="island-card">
         <%= link_to island_path(island) do %>
-        <% if island.photos.attached?%>
-          <%= cl_image_tag island.photo.key, class: "w-100" %>
-        <% else %>
-          <%= image_tag "missing_img.jpg",class: "w-100" %>
+          <% if island.photos.attached?%>
+            <%= cl_image_tag island.photo[0].key, class: "island-picture" %>
+          <% else %>
+            <%= image_tag "missing_img.jpg", class: "island-picture" %>
+          <% end %>
         <% end %>
         <div class="info">
-        <h4><%= island.name %> - <span class="country-name"><%= island.country %><i class="country-flag"></i></span></h4>
-        <h5><%= island.price_per_day %>/day</h5>
+          <h5><%= island.name %> - <span class="country-name"><%= island.country %><i class="country-flag"></i></span></h5>
+          <h6> <strong><%= island.price_per_day %></strong>/ day</h6>
         </div>
-        <% end %>
       </div>
     <% end %>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-5">
+    <div id="map"
+         style="width: 100%; height: 600px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
