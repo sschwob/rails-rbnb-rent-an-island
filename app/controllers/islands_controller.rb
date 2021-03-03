@@ -17,7 +17,7 @@ class IslandsController < ApplicationController
     @island = Island.new(island_params)
     @island.user = current_user
     if @island.save
-      redirect_to island_path(@island)
+      redirect_to island_path(@island), notice: "Island was successfully created"
     else
       render :new
     end
@@ -28,7 +28,7 @@ class IslandsController < ApplicationController
 
   def update
     if @island.update(island_params)
-      redirect_to user_islands_path
+      redirect_to user_islands_path, notice: "Island was successfully updated"
     else
       render :edit
     end
@@ -37,9 +37,9 @@ class IslandsController < ApplicationController
   def destroy
     @island.destroy
     if current_user.islands != []
-      redirect_to user_islands_path
+      redirect_to user_islands_path, notice: "Island was successfully deleted"
     else
-      redirect_to root_path
+      redirect_to root_path, notice: "Island was successfully deleted"
     end
   end
 
