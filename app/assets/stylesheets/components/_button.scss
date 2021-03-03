@@ -47,20 +47,26 @@
   color: white;
 }
 
-.btn-gradient {
+// .btn-gradient {
+//   color: white;
+//   padding: 8px 24px;
+//   border-radius: 4px;
+//   font-weight: bold;
+//   background: linear-gradient(#167FFB, #0F60C4);
+//   transition: background 0.3s ease;
+//   border: 1px solid #0F60C4;
+// }
+
+.btn-home-island:hover {
+  background: linear-gradient(#F68806, #494086);
   color: white;
+}
+
+.btn-home-island {
+  color: white;
+  background: linear-gradient(#494086, #F68806);
   padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
+  border-radius: 50px;
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
 }
-
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
-}
-
-
 
