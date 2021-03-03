@@ -25,15 +25,16 @@ import "bootstrap";
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { searchFlagImg } from "../plugins/flags";
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
-  
+
   $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+    $('[data-toggle="tooltip"]').tooltip();
   });
 
   initFlatpickr();
-  
+
   initSweetalert('.sweet-alert-warning', {
     title: "Are you sure?",
     text: "This action cannot be reversed",
@@ -50,3 +51,8 @@ document.addEventListener('turbolinks:load', () => {
   searchFlagImg();
 
 });
+
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
