@@ -75,8 +75,8 @@
         </div>
         <div id="booking-form-bottom">
           <div id="booking-form-infos">
-            Length of stay : <%= 0 %> days <br>
-            Total price : <i class="fas fa-dollar-sign"></i> <%= 0 * @island.price_per_day %>
+            Length of stay : <span id="length-of-stay"></span> days <br>
+            Total price : <i class="fas fa-dollar-sign"></i> <strong><span id="total-price", data-price=<%= "#{@island.price_per_day}" %>></span></strong>
           </div>
           <%= f.submit id: 'btn-submit-booking' %>
         </div>
