@@ -9,12 +9,15 @@
   justify-content: center;
 }
 
-#banner h1 {
-  font-weight: bold;
-}
-
-#banner h1, p {
-  color: white;
+#banner {
+  h1 {
+    font-weight: bold;
+    color: white;
+  }
+  
+  p {
+    color: white;
+  }
 }
 
 .main-header {
