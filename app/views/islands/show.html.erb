@@ -2,7 +2,7 @@
   <div id="show-island-images">
     <div id="show-island-image-big">
     <h1><%= @island.name %></h1>
-      <span id="big-img">
+      <span id="big-img", data-state="0">
         <% if @island.photos.attached?%>
           <%= cl_image_tag @island.photos[0].key %>
         <% else %>
