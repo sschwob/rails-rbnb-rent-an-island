@@ -34,7 +34,7 @@ document.addEventListener('turbolinks:load', () => {
 
   initFlatpickr();
   
-  initSweetalert('#sweet-alert-delete', {
+  initSweetalert('.sweet-alert-warning', {
     title: "Are you sure?",
     text: "This action cannot be reversed",
     icon: "warning",
@@ -42,7 +42,7 @@ document.addEventListener('turbolinks:load', () => {
     dangerMode: true,
   }, (value) => {
     if (value) {
-      const link = document.querySelector('#delete-island');
+      const link = document.getElementById(`${window.islandId}`);
       link.click();
     }
   });

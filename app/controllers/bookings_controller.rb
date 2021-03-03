@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.island = @island
     if @booking.save
-      redirect_to user_bookings_path
+      redirect_to user_bookings_path, notice: "Booking made successfully"
     else
       render :new
     end
