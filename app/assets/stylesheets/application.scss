@@ -13,9 +13,7 @@
 @import "components/index";
 @import "pages/index";
 @import "island/index";
-
-// form design
-@import "components/form";
+@import "booking/index";
 
 a {
   text-decoration: none !important;
@@ -27,5 +25,7 @@ a {
 }
 
 #page-container {
-  margin-top: 70px;
+  margin: 70px 0 0 0;
+  padding: 0;
+  width: 100%;
 }
