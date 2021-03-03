@@ -1,5 +1,11 @@
+#map {
+  height: calc(100vh - 71px);
+  position: sticky;
+  top: 71px;
+}
+
 .mapboxgl-canvas {
-  position: static;
+  height: calc(100vh - 71px);
 }
 
 .mapboxgl-popup {
