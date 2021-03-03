@@ -1,25 +1,25 @@
 #banner {
   background-image: url('https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   width: 100%;
-  height: 446px;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-#banner-title, #banner-h2 {
-  width: 100%;
+#banner h1 {
+  font-weight: bold;
+}
+
+#banner h1, p {
   color: white;
-  text-align: center;
 }
 
-#banner-title {
-  padding: 100px 50px 0 50px;
-}
-
-#banner-h2 {
-  margin-bottom: 100px;
+.main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

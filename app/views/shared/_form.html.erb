@@ -1,26 +1,15 @@
-<div id="form-container">
-  <div class="container">
-    <div class="d-flex">
-      <div class="form col-4" id="info">
-        <%= simple_form_for(island) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :country %>
-          <%= f.input :longitude %>
-          <%= f.input :latitude %>
-          <%= f.input :area %>
-          <%= f.input :price_per_day %>
-          <%= f.input :photo, as: :file %>
-          <%= f.submit "Submit", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-
-      <div class="form col-8" id="description">
-        <%= simple_form_for(island) do |f| %>
-          <%= f.input :description, as: :text %>
-        <% end %>
-      </div>
-
+<div id="form-container" class="container">
+  <%= simple_form_for(island) do |f| %>
+    <div id="info">
+      <%= f.input :name, placeholder: "Bora-Bora" %>
+      <%= f.input :country, as: :country, selected: island.country %>
+      <%= f.input :latitude, placeholder: "-16.5046"%>
+      <%= f.input :longitude, placeholder: "-151.743" %>
+      <%= f.input :area, placeholder: "32 km²" %>
+      <%= f.input :price_per_day, placeholder: "$ 75000" %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit "Submit", class: "button" %>
     </div>
-
-  </div>
+  <% end %>
 </div>

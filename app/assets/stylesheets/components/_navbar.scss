@@ -1,5 +1,7 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   background: #8661C1;
 }
 
@@ -11,3 +13,15 @@
   width: 40px;
 }
 
+.navbar-lewagon h3{
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  width: 456px;
+}

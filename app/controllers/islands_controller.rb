@@ -16,6 +16,7 @@ class IslandsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -63,7 +64,7 @@ class IslandsController < ApplicationController
   end
 
   def island_params
-    params.require(:island).permit(:name, :country, :description, :latitude, :longitude, :price_per_day, :area, :photo)
+    params.require(:island).permit(:name, :country, :description, :latitude, :longitude, :price_per_day, :area, photos: [])
   end
 
 end
