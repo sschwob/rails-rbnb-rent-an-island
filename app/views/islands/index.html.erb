@@ -8,7 +8,7 @@
       <div class="island-card">
         <%= link_to island_path(island) do %>
           <% if island.photos.attached?%>
-            <%= cl_image_tag island.photo[0].key, class: "island-picture" %>
+            <%= cl_image_tag island.photos[0].key, class: "island-picture" %>
           <% else %>
             <%= image_tag "missing_img.jpg", class: "island-picture" %>
           <% end %>
