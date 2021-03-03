@@ -1,21 +1,9 @@
 <div id="banner">
-
-  <div class="mt-4 justify-content-center" id="banner-title">
-    <h1 class="title">Rent an Island</h1>
-    <h2 class="subtitle">Discover all the islands you nerver seen</h2>
-    <%= link_to "Discover our Island",  islands_path, class: "btn btn-gradient" %>
-  </div>
-
-  <div class="container" id="search">
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    <% end %>
-  </div>
+    <div class="main-header">
+      <h1>Rent an Island</h1>
+      <p>Discover all the islands you nerver seen<p/>
+      <%= link_to "Discover our Island",  islands_path, class: "btn-home-island" %>
+    </div>
 
 </div>
 
@@ -23,3 +11,26 @@
     <h2>N'avez vous jamais réver d'avoir votre propre ile rien que pour vous ?</h2>
 </div>
 
+<div class="footer">
+    <div class="footer-copyright">
+     <h2><%= image_tag("logo.png") %> Rent an Island</h2>
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Donec placerat rutrum lectus vitae pharetra. Integer consectetur
+      malesuada lorem consectetur volutpat. Sed vitae neque eros.
+      Nulla mattis porttitor interdum.</p>
+    </div>
+
+    <div id="footer-follow-us">
+      <h2>Follow US</h2>
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
