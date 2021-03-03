@@ -26,6 +26,7 @@ import { initSweetalert } from '../plugins/init_sweetalert';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { searchFlagImg } from "../plugins/flags";
 import { initMapbox } from '../plugins/init_mapbox';
+import { swapImg } from '../plugins/swapImg';
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -49,6 +50,8 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   searchFlagImg();
+
+  swapImg();
 
 });
 

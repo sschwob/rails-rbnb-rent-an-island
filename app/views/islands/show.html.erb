@@ -2,41 +2,51 @@
   <div id="show-island-images">
     <div id="show-island-image-big">
     <h1><%= @island.name %></h1>
-      <% if @island.photos.attached?%>
-        <%= cl_image_tag @island.photos[0].key %>
-      <% else %>
-        <%= image_tag "missing_img.jpg", id: "image"%>
-      <% end %>
+      <span id="big-img">
+        <% if @island.photos.attached?%>
+          <%= cl_image_tag @island.photos[0].key %>
+        <% else %>
+          <%= image_tag "missing_img"%>
+        <% end %>
+      </span>
     </div>
 
     <div id="show-island-images-small">
         <div class="show-island-image-small-container">
-          <% if @island.photos[1] != nil %>
-            <%= cl_image_tag @island.photos[1].key %>
-          <% else %>
-            <%= image_tag "missing_img.jpg", id: "image"%>
-          <% end %>
+          <span class="small-img">
+            <% if @island.photos[1] != nil %>
+              <%= cl_image_tag @island.photos[1].key %>
+            <% else %>
+              <%= image_tag "missing_img"%>
+            <% end %>
+          </span>
         </div>
         <div class="show-island-image-small-container">
-          <% if @island.photos[2] != nil %>
-            <%= cl_image_tag @island.photos[2].key %>
-          <% else %>
-            <%= image_tag "missing_img.jpg", id: "image"%>
-          <% end %>
+          <span class="small-img">
+            <% if @island.photos[2] != nil %>
+              <%= cl_image_tag @island.photos[2].key %>
+            <% else %>
+              <%= image_tag "missing_img"%>
+            <% end %>
+          </span>
         </div>
         <div class="show-island-image-small-container">
-          <% if @island.photos[3] != nil %>
-            <%= cl_image_tag @island.photos[3].key %>
-          <% else %>
-            <%= image_tag "missing_img.jpg", id: "image"%>
-          <% end %>
+          <span class="small-img">
+            <% if @island.photos[3] != nil %>
+              <%= cl_image_tag @island.photos[3].key %>
+            <% else %>
+              <%= image_tag "missing_img"%>
+            <% end %>
+          </span>
         </div>
         <div class="show-island-image-small-container">
-          <% if @island.photos[4] != nil %>
-            <%= cl_image_tag @island.photos[4].key %>
-          <% else %>
-            <%= image_tag "missing_img.jpg", id: "image"%>
-          <% end %>
+          <span class="small-img">
+            <% if @island.photos[4] != nil %>
+              <%= cl_image_tag @island.photos[4].key %>
+            <% else %>
+              <%= image_tag "missing_img"%>
+            <% end %>
+          </span>
         </div>
     </div>
   </div>
