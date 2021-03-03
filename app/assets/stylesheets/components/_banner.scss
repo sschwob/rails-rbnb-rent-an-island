@@ -1,13 +1,14 @@
 #banner {
   background-image: url('https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   width: 100%;
-  height: 446px;
+  height: 526px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  text-align: center;
 }
 
 #banner-title, #banner-h2 {
