@@ -4,9 +4,19 @@ class IslandsController < ApplicationController
 
   def index
     @islands = Island.all
+
+    @markers = @islands.map do |island|
+      {
+        lat: island.latitude,
+        lng: island.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { island: island }),
+        image_url: helpers.asset_url('missing_img')
+      }
+    end
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -54,7 +64,7 @@ class IslandsController < ApplicationController
   end
 
   def island_params
-    params.require(:island).permit(:name, :country, :description, :latitude, :longitude, :price_per_day, :area, :photo)
+    params.require(:island).permit(:name, :country, :description, :latitude, :longitude, :price_per_day, :area, photos: [])
   end
 
 end

@@ -1,50 +1,146 @@
-.title {
-  margin-top: 20px;
+#show-island-container {
+  margin: 96px 66px 16px 66px;
 }
 
-.booking {
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 12px;
-  padding: 24px;
-  display: block;
-  height: 100px;
-  box-shadow: #a5a5a5 0px 6px 16px;
-  margin: 15px 0 0 auto;
+#show-island-images, #show-island-images-small {
+  padding: 0;
+  height: 350px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
+
+#show-island-image-big, .show-island-image-small-container {
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+#show-island-image-big {
+  position: relative;
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+}
+
+.show-island-image-small-container img {
+  height: 170px !important;
+}
+
+#show-island-infos-container {
+  margin-top: 16px;
+  height: 270px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 16px;
+}
+
+#show-island-infos {
   padding-top: 16px;
+  padding-left: 16px;
 }
 
-.image-container {
-  text-align: center;
-  padding: 16px;
+#show-island-more-infos {
+  margin-top: 16px;
 }
 
-#image {
-  border-radius: 6px;
+#show-island-infos-content {
+  margin-top: 16px;
+  margin-right: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #c8d2db;
 }
 
-@media(max-width: 772px) {
-  #image{
-    width: 500px;
-  }
-  .booking {
-    width: 200px;
-    margin: 0 auto;
-    align-items: center;
-      h3 {
-        font-size: 18px;
-      }
-  }
+#show-island-booking-form {
+  padding: 24px;
+  border: 1px solid #c8d2db;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-@media(max-width: 572px) {
-  #image{
-    width: 350px;
-  }
-}
-
-
-.information {
+#booking-form-dates {
   display: flex;
-  justify-content: space-between;
-  margin: 15px;
+  justify-content: space-around;
+}
+
+.booking_start_date {
+  margin-right: 8px;
+}
+
+.new_booking {
+  margin-top: 8px;
+}
+
+#booking-form-infos {
+  margin-bottom: 16px;
+}
+
+#btn-submit-booking {
+  width: 100%;
+  height: 38px;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: #8561C1;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  &:hover {
+      transition: 1s;
+      border-radius: 1px;
+      background-color: #c3a6f4;
+      color: #8561C1;
+    }
+}
+
+@media(max-width: 992px) {
+  #show-island-container {
+    margin: 24px;
+    margin-top: 88px;
+  }
+}
+
+@media(max-width: 750px) {
+  #show-island-container {
+    margin: 0;
+    margin-top: 70px;
+  }
+  
+  #show-island-images-small {
+    display: none;
+  }
+  #show-island-images {
+    grid-template-columns: 1fr;
+  }
+
+  #show-island-image-big {
+    border-radius: 0;
+    
+    img {
+      border-radius: 0;
+    }
+  }
+
+  #show-island-infos-container {
+    grid-template-columns: 1fr;
+  }
+
+  #show-island-booking-form {
+    text-align: center;
+  }
+
 }
