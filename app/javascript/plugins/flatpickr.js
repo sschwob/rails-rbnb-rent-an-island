@@ -6,7 +6,7 @@ const initFlatpickr = () => {
     altInput: true,
     plugins: [new rangePlugin({ input: "#range_end"})],
     minDate: "today",
-    dateFormat: 'n/j/Y',
+    // dateFormat: 'n/j/Y',
     onClose: (selectedDates, dateStr, instance) => {
       const daysInRange = document.getElementsByClassName('inRange');
       const daysLengthTotal = daysInRange.length + 1;

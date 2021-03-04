@@ -2,7 +2,19 @@
 
   <% if current_user.islands != [] %>
     <div id="user-islands-bookings">
-      <h3>My islands bookings</h3>
+      <div class="user-bookings-header">
+        <h3>My islands bookings</h3>
+        <div class="user-bookings-selector">
+          <select class="select2" name="island-bookings-state">
+            <option value="all">All</option>
+            <option value="waiting">Waiting</option>
+            <option value="accepted">Accepted</option>
+            <option value="refused">Refused</option>
+            <option value="canceled">Canceled</option>
+          </select>
+          <button id="island-bookings-search" class="btn btn-primary btn-search" type="button">Search</button>
+        </div>
+      </div>
       <div id="user-islands-bookings-list">
         <% @user_islands.each do |island| %>
           <div class="island-bookings">
@@ -41,7 +53,19 @@
   <% end %>
 
   <div id="user-bookings">
-    <h3>My bookings</h3>
+    <div class="user-bookings-header">
+      <h3>My bookings</h3>
+      <div class="user-bookings-selector">
+        <select class="select2" name="user-bookings-state">
+          <option value="all">All</option>
+          <option value="waiting">Waiting</option>
+          <option value="accepted">Accepted</option>
+          <option value="refused">Refused</option>
+          <option value="canceled">Canceled</option>
+        </select>
+        <button id="user-bookings-search" class="btn btn-primary btn-search" type="button">Search</button>
+      </div>
+    </div>
     <% if current_user.bookings != [] %>
     <div id="user-bookings-list">
       <% @user_bookings.each do |booking| %>

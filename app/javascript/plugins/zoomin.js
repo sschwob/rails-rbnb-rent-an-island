@@ -1,5 +1,8 @@
 
 const zoomIn = () => {
+  if (!document.getElementById('big-img')) {
+    return;
+  };
   const bigImg = document.getElementById('big-img');
   const smallsImg = document.getElementById('show-island-images-small')
   const imgContainer = document.getElementById('show-island-images');

@@ -2,7 +2,7 @@
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 86px;
+  margin-top: 104px;
   margin-bottom: 24px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -41,4 +41,26 @@
   padding-top: 8px;
   padding-bottom: 8px;
   border-top: 1px solid #7f8f9f;
+}
+
+.user-bookings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.user-bookings-selector {
+  display: flex;
+  width: 200px;
+
+  .btn-search {
+    height: 28px;
+    padding: 0 4px 0 4px;
+    margin-left: 8px;
+  }
 }
