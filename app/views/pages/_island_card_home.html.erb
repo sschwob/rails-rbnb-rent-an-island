@@ -1,14 +1,11 @@
 <% islands.each do |island| %>
-  <%= link_to island_path(island) do %>
+  <%= link_to island_path(island), target: "_blank" do %>
     <% if island.photos.attached?%>
-
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path island.photos[0].key %>)">
         <h2><%= island.name %></h2>
         <h4 class="country-name"><%= island.country %><i class="country-flag"></i></h4>
       </div>
-
     <% else %>
-
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'missing_img.jpg' %>)">
         <h2><%= island.name %></h2>
         <h4 class="country-name"><%= island.country %><i class="country-flag"></i></h4>

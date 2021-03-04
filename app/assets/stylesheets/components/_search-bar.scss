@@ -6,11 +6,15 @@
   display: flex;
 }
 
+.form-outline {
+  width: 300px;
+}
+
 .phone-searchbar {
   justify-content: center;
   padding: 35px;
   .form-control {
-    width: 250px;
+    width: 300px;
     height: 40px;
   }
 }
