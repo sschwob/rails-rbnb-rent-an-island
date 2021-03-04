@@ -3,15 +3,19 @@ class IslandsController < ApplicationController
   before_action :find_island, only: [:edit, :update, :show, :destroy]
 
   def index
-    @islands = Island.all
+    if params[:query].present?
+      @islands = Island.search_by_name_country_or_price_per_day(params[:query])
+      @islands_all = Island.all
 
-    @markers = @islands.map do |island|
-      {
-        lat: island.latitude,
-        lng: island.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { island: island }),
-        image_url: helpers.asset_url('missing_img')
-      }
+      if @islands.empty?
+        @markers = markers(@islands_all)
+      else
+        @markers = markers(@islands)
+      end
+
+    else
+      @islands = Island.all
+      @markers = markers(@islands)
     end
   end
 
@@ -67,4 +71,14 @@ class IslandsController < ApplicationController
     params.require(:island).permit(:name, :country, :description, :latitude, :longitude, :price_per_day, :area, photos: [])
   end
 
+  def markers(islands)
+    islands.map do |island|
+      {
+        lat: island.latitude,
+        lng: island.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { island: island }),
+        image_url: helpers.asset_url('missing_img')
+      }
+    end
+  end
 end

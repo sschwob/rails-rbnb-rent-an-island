@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "user/islands", to: "islands#index_user"
   get "user/bookings", to: "bookings#index_user"
 
-  resources :booking do 
+  resources :booking do
     member do
       patch "accept", to: "bookings#accept"
       patch "refuse", to: "bookings#refuse"
