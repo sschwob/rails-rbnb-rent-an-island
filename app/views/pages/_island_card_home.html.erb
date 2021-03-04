@@ -1,0 +1,14 @@
+<% islands.each do |island| %>
+  <div class="card">
+    <%= link_to island_path(island) do %>
+      <% if island.photos.attached?%>
+        <%= cl_image_tag island.photos[0].key %>
+      <% else %>
+        <%= image_tag "missing_img.jpg" %>
+      <% end %>
+    <% end %>
+    <div class="info">
+      <h4><%= island.name %> - <span class="country-name"><%= island.country %><i class="country-flag"></i></span></h4>
+    </div>
+  </div>
+<% end %>
