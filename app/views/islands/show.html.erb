@@ -65,24 +65,24 @@
       <i class="fas fa-compass"></i> <%= @island.latitude %>, <%= @island.longitude %>
       </div>
     </div>
-
-    <div id="show-island-booking-form">
-      <span>Select dates to see the price: <strong><%= humanized_money_with_symbol(@island.price_per_day) %></strong> / day</i></span>
-      <%= simple_form_for([@island, @booking]) do |f| %>
-        <div id="booking-form-dates">
-          <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" }  %>
-          <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
-        </div>
-        <div id="booking-form-bottom">
-          <div id="booking-form-infos">
-            Length of stay : <span id="length-of-stay"></span> days <br>
-            Total price : <i class="fas fa-dollar-sign"></i> <strong><span id="total-price", data-price=<%= "#{@island.price_per_day}" %>></span></strong>
+    <% if current_user != @island.user %>
+      <div id="show-island-booking-form">
+        <span>Select dates to see the price: <i class="fas fa-dollar-sign"> <%= @island.price_per_day %> / day</i></span>
+        <%= simple_form_for([@island, @booking]) do |f| %>
+          <div id="booking-form-dates">
+            <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" }  %>
+            <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
           </div>
-          <%= f.submit id: 'btn-submit-booking' %>
-        </div>
-
-      <% end %>
-    </div>
+          <div id="booking-form-bottom">
+            <div id="booking-form-infos">
+              Length of stay : <span id="length-of-stay"></span> days <br>
+              Total price : <i class="fas fa-dollar-sign"></i> <strong><span id="total-price", data-price=<%= "#{@island.price_per_day}" %>></span></strong>
+            </div>
+            <%= f.submit id: 'btn-submit-booking' %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
 </div>
