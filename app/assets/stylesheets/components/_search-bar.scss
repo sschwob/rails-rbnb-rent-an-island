@@ -1,0 +1,16 @@
+.globe-color {
+  color: white;
+}
+
+.laptop-searchbar, .phone-searchbar {
+  display: flex;
+}
+
+.phone-searchbar {
+  justify-content: center;
+  padding: 35px;
+  .form-control {
+    width: 250px;
+    height: 40px;
+  }
+}
