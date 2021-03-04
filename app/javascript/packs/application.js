@@ -28,6 +28,7 @@ import { searchFlagImg } from "../plugins/flags";
 import { initMapbox } from '../plugins/init_mapbox';
 import { swapImg } from '../plugins/swapimg';
 import { zoomIn } from '../plugins/zoomin';
+import { initSelect2 } from '../plugins/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -51,6 +52,8 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   initMapbox();
+
+  initSelect2();
 
   searchFlagImg();
 
