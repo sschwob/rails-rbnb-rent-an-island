@@ -18,6 +18,15 @@ class IslandsController < ApplicationController
         image_url: helpers.asset_url('missing_img')
       }
     end
+
+    @markers = @islands_all.map do |island|
+      {
+        lat: island.latitude,
+        lng: island.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { island: island }),
+        image_url: helpers.asset_url('missing_img')
+      }
+    end
   end
 
   def show
