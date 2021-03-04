@@ -17,4 +17,5 @@ Rails.application.routes.draw do
       patch "cancel", to: "bookings#cancel"
     end
   end
+
 end

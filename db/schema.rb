@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_104108) do
+ActiveRecord::Schema.define(version: 2021_03_04_164831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,17 @@ ActiveRecord::Schema.define(version: 2021_03_03_104108) do
     t.index ["user_id"], name: "index_islands_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.boolean "to_read", default: false
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "owner_answer", default: false
+    t.index ["booking_id"], name: "index_notifications_on_booking_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -87,4 +98,6 @@ ActiveRecord::Schema.define(version: 2021_03_03_104108) do
   add_foreign_key "bookings", "islands"
   add_foreign_key "bookings", "users"
   add_foreign_key "islands", "users"
+  add_foreign_key "notifications", "bookings"
+  add_foreign_key "notifications", "users"
 end
