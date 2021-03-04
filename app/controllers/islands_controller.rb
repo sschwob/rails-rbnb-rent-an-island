@@ -3,7 +3,12 @@ class IslandsController < ApplicationController
   before_action :find_island, only: [:edit, :update, :show, :destroy]
 
   def index
-    @islands = Island.all
+    if params[:query].present?
+      @islands = Island.search_by_name_country_or_price_per_day(params[:query])
+      @islands_all = Island.all
+    else
+      @islands = Island.all
+    end
 
     @markers = @islands.map do |island|
       {
