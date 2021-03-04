@@ -1,10 +1,10 @@
-<%= form_tag islands_path class:"laptop-searchbar", method: :get do %>
+<%= form_tag islands_path, class:"laptop-searchbar", method: :get do %>
   <div class="laptop-searchbar">
     <div class="form-outline">
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find your Island"
+      placeholder: "Find an Island"
       %>
     </div>
     <button type="submit" class="btn btn-primary">

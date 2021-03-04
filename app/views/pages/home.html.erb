@@ -13,10 +13,13 @@
     <h4 class= "phone-size">Find The Island of Your <strong>Dream</strong> </h4>
     <%= render "shared/phone-searchbar" %>
   </div>
-  <div class="cards">
-    <%= render "island_card_home", islands: @islands %>
-  </div>
+  <%# <div class="cards"> %>
+    <%#= render "island_card_home", islands: @islands %>
+  <%# </div> %>
 </div>
+
+<%= render "carousel", islands: @islands %>
+
 
 <div class="row footer">
   <div class="col-sm-12 col-md-6 col-lg-5">
