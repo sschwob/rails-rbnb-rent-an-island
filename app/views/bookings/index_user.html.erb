@@ -18,7 +18,7 @@
                   <br>
                   Price per day : <i class="fas fa-dollar-sign"></i> <%= booking.island.price_per_day %>
                   <br>
-                  Total price : <i class="fas fa-dollar-sign"></i> <%= (booking.end_date - booking.start_date).ceil * booking.island.price_per_day %>
+                  Total price : <i class="fas fa-dollar-sign"></i> <%= (booking.start_date - booking.end_date).ceil * booking.island.price_per_day %>
                   <br>
                   <span>State : <%= booking.state %></span>
                   <% if booking.state == "waiting" %>
