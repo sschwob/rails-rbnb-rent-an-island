@@ -125,8 +125,134 @@
                 <% end %>
               <% end %>
           </div>
-          <%# <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-          <div class="item__3d-frame__box item__3d-frame__box--right"></div> %>
+          <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+          <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+        </div>
+      </div>
+      <div class="carousel__slider__item">
+        <div class="item__3d-frame">
+          <div class="item__3d-frame__box item__3d-frame__box--front">
+              <%= link_to island_path(islands[6]), target: "_blank" do %>
+                <% if islands[6].photos.attached?%>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path islands[6].photos[0].key %>)">
+                    <h2><%= islands[6].name %></h2>
+                    <h4 class="country-name"><%= islands[6].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% else %>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'missing_img.jpg' %>)">
+                    <h2><%= islands[6].name %></h2>
+                    <h4 class="country-name"><%= islands[6].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+          <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+        </div>
+      </div>
+      <div class="carousel__slider__item">
+        <div class="item__3d-frame">
+          <div class="item__3d-frame__box item__3d-frame__box--front">
+              <%= link_to island_path(islands[7]), target: "_blank" do %>
+                <% if islands[7].photos.attached?%>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path islands[7].photos[0].key %>)">
+                    <h2><%= islands[7].name %></h2>
+                    <h4 class="country-name"><%= islands[7].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% else %>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'missing_img.jpg' %>)">
+                    <h2><%= islands[7].name %></h2>
+                    <h4 class="country-name"><%= islands[7].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+          <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+        </div>
+      </div>
+      <div class="carousel__slider__item">
+        <div class="item__3d-frame">
+          <div class="item__3d-frame__box item__3d-frame__box--front">
+              <%= link_to island_path(islands[8]), target: "_blank" do %>
+                <% if islands[8].photos.attached?%>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path islands[8].photos[0].key %>)">
+                    <h2><%= islands[8].name %></h2>
+                    <h4 class="country-name"><%= islands[8].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% else %>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'missing_img.jpg' %>)">
+                    <h2><%= islands[8].name %></h2>
+                    <h4 class="country-name"><%= islands[8].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+          <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+        </div>
+      </div>
+      <div class="carousel__slider__item">
+        <div class="item__3d-frame">
+          <div class="item__3d-frame__box item__3d-frame__box--front">
+              <%= link_to island_path(islands[9]), target: "_blank" do %>
+                <% if islands[9].photos.attached?%>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path islands[9].photos[0].key %>)">
+                    <h2><%= islands[9].name %></h2>
+                    <h4 class="country-name"><%= islands[9].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% else %>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'missing_img.jpg' %>)">
+                    <h2><%= islands[9].name %></h2>
+                    <h4 class="country-name"><%= islands[9].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+          <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+        </div>
+      </div>
+      <div class="carousel__slider__item">
+        <div class="item__3d-frame">
+          <div class="item__3d-frame__box item__3d-frame__box--front">
+              <%= link_to island_path(islands[10]), target: "_blank" do %>
+                <% if islands[10].photos.attached?%>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path islands[10].photos[0].key %>)">
+                    <h2><%= islands[10].name %></h2>
+                    <h4 class="country-name"><%= islands[10].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% else %>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'missing_img.jpg' %>)">
+                    <h2><%= islands[10].name %></h2>
+                    <h4 class="country-name"><%= islands[10].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+          <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+        </div>
+      </div>
+      <div class="carousel__slider__item">
+        <div class="item__3d-frame">
+          <div class="item__3d-frame__box item__3d-frame__box--front">
+              <%= link_to island_path(islands[11]), target: "_blank" do %>
+                <% if islands[11].photos.attached?%>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path islands[11].photos[0].key %>)">
+                    <h2><%= islands[11].name %></h2>
+                    <h4 class="country-name"><%= islands[11].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% else %>
+                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path 'missing_img.jpg' %>)">
+                    <h2><%= islands[11].name %></h2>
+                    <h4 class="country-name"><%= islands[11].country %><i class="country-flag"></i></h4>
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+          <div class="item__3d-frame__box item__3d-frame__box--right"></div>
         </div>
       </div>
     </div>
