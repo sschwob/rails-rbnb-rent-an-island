@@ -1,7 +1,4 @@
 #bookings-index {
-  // background-color: white;
-  // border-radius: 8px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 104px;
   margin-bottom: 24px;
   padding-top: 8px;
@@ -9,29 +6,20 @@
 }
 
 #user-islands-bookings {
-  border-bottom: 1px solid #7f8f9f;
   margin-bottom: 16px;
   padding-bottom: 8px;
 }
 
 #user-bookings-list {
-  border-top: 1px solid #7f8f9f;
   margin-top: 16px;
   padding-top: 16px;
 }
 
-.user-booking {
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #7f8f9f;
-}
-
 #user-islands-bookings-list {
-  // border-top: 1px solid #7f8f9f;
   padding-top: 8px;
 }
 
-.island-booking {
+.island-booking, .user-booking {
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
@@ -67,14 +55,14 @@
   }
 }
 
-.island-booking-content {
+.island-booking-content, .user-booking-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
 }
 
-.island-booking-left {
+.island-booking-left, .user-booking-left {
   width: 280px;
   height: 80px;
   display: flex;
@@ -86,7 +74,7 @@
   }
 }
 
-.island-booking-center {
+.island-booking-center, .user-booking-center {
   width: 200px;
   height: 80px;
   display: flex;
@@ -98,14 +86,14 @@
   }
 }
 
-.island-booking-right {
+.island-booking-right, .user-booking-right {
   width: 180px;
   height: 80px;
 }
 
 .booking-waiting {
 
-  .island-booking-right {
+  .island-booking-right, .user-booking-right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,17 +116,25 @@
       bottom: 4px;
       right: 0px;
     }
-  }
 
+    .cancel-booking {
+      color: $red;
+      position: absolute;
+      right: 0;
+      top: 13px;
+    }
+  }
 }
 
-.island-booking-right {
+.island-booking-right, .user-booking-right {
   display: flex;
   justify-content: center;
   align-items: center;
 
   .booking-state-refused {
     color: white;
+    text-align: center;
+    width: 95px;
     padding: 8px 16px 8px 16px;
     border-radius: 8px;
     background-color: $red;
@@ -146,6 +142,8 @@
 
   .booking-state-accepted {
     color: white;
+    text-align: center;
+    width: 95px;
     padding: 8px 16px 8px 16px;
     border-radius: 8px;
     background-color: $green;
@@ -153,6 +151,8 @@
 
   .booking-state-waiting {
     color: white;
+    text-align: center;
+    width: 95px;
     padding: 8px 16px 8px 16px;
     border-radius: 8px;
     background-color: $orange;
@@ -160,6 +160,8 @@
 
   .booking-state-canceled {
     color: white;
+    text-align: center;
+    width: 95px;
     padding: 8px 16px 8px 16px;
     border-radius: 8px;
     background-color: $gray;
@@ -167,7 +169,7 @@
 }
 
 @media(max-width: 770px) {
-  .island-booking-left, .island-booking-center {
+  .island-booking-left, .island-booking-center, .user-booking-left, .user-booking-center {
     height: 110px;
   
     > div {
@@ -175,13 +177,13 @@
     }
   }
   
-  .island-booking-right {
+  .island-booking-right, .user-booking-right {
     height: 110px;
   }
 }
 
 @media(max-width: 510px) {
-  .island-booking-left, .island-booking-center {
+  .island-booking-left, .island-booking-center, .user-booking-left, .user-booking-center {
     height: 130px;
   
     > div {
@@ -189,7 +191,7 @@
     }
   }
   
-  .island-booking-right {
+  .island-booking-right, .user-booking-right {
     height: 130px;
   }
 }
