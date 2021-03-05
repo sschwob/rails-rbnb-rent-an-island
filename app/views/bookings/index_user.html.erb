@@ -99,6 +99,13 @@
             <%= link_to cancel_booking_path(booking), method: :patch, title: 'Cancel booking', data: { toggle: 'tooltip', confirm: "Are you sure?" } do %>
               <i class="fas fa-times-circle cancel-booking"></i>
             <% end %>
+          <%  elsif booking.state == "Accepted" %>
+            <% unless booking.order && booking.order.state == "paid"%>
+              <%= form_tag orders_path do %>
+                <%= hidden_field_tag 'booking_id', booking.id %>
+                <%= submit_tag 'Purchase', class: 'btn btn-primary', id: 'purchase' %>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
@@ -109,3 +116,6 @@
   </div>
 
 </div>
+
+
+

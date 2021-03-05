@@ -6,7 +6,7 @@ session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
       name: booking.island.name,
-      amount: order.amount,
+      amount: order.amount_cents,
       currency: 'usd',
       quantity: 1
     }],
