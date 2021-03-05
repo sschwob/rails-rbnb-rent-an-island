@@ -5,7 +5,7 @@
       <% if @order.booking.island.photos.attached? %>
           <%= cl_image_tag @order.booking.island.photos[0].key, class:"img-payement" %>
         <% else %>
-          <%= image_tag "missing_img", width: '100%', class:"img-payement"%>
+          <%= image_tag "missing_img", class:"img-payement"%>
         <% end %>
     </div>
     <div class="col">

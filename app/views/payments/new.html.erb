@@ -4,7 +4,7 @@
       <% if @order.booking.island.photos.attached? %>
           <%= cl_image_tag @order.booking.island.photos[0].key, class:"img-payement" %>
         <% else %>
-          <%= image_tag "missing_img", width: '100%', class:"img-payement"%>
+          <%= image_tag "missing_img", class:"img-payement"%>
         <% end %>
     </div>
     <div class="col">
@@ -13,7 +13,9 @@
         <p>Purchase of <strong><%= @order.booking.island.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
         <p><strong><%= (@order.booking.end_date - @order.booking.start_date).ceil%> / days</strong></p>
       </div>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <div class="btn-payment">
+        <button id="pay" class="btn btn-primary">Pay</button>
+      </div>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
