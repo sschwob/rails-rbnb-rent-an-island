@@ -17,4 +17,12 @@ Rails.application.routes.draw do
       patch "cancel", to: "bookings#cancel"
     end
   end
+
+
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+  
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
 end

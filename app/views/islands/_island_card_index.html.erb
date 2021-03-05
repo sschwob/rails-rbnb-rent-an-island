@@ -1,6 +1,6 @@
 <% islands.each do |island| %>
   <div class="island-card">
-    <%= link_to island_path(island) do %>
+    <%= link_to island_path(island), target: "_blank" do %>
       <% if island.photos.attached?%>
         <%= cl_image_tag island.photos[0].key, class: "island-picture" %>
       <% else %>

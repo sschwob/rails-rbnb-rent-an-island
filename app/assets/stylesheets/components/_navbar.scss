@@ -26,7 +26,7 @@
   margin: 0 0 0 auto;
 }
 
-#login-link {
+.btn-navbar {
   background-color: white;
   color: #8561C1;
   border-radius: 6px;
@@ -38,4 +38,46 @@
       background-color: #c3a6f4;
       color: white;
     }
+}
+
+#new-island-link {
+  margin-right: 24px;
+  margin-left: 8px;
+}
+
+.fa-user-circle {
+  color: white;
+  font-size: 32px;
+}
+
+.fa-bell {
+  color: white;
+  font-size: 18px;
+  margin-right: 16px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.avatar:hover {
+  cursor: pointer;
+}
+
+#notifications-info {
+  display: flex;
+  position: relative;
+
+  #notif-count {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: #D73B3A;
+    position: absolute;
+    top: -7px;
+    right: 6px;
+  }
 }

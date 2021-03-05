@@ -34,6 +34,9 @@ gem 'simple_form'
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
+gem 'money-rails'
+gem 'stripe'
+gem 'stripe_event'
 gem 'pg_search', '~> 2.3.0'
 
 # gem 'dotenv-rails', groups: [:development, :test]
