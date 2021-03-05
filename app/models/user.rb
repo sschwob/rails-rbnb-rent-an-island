@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :islands
   has_many :bookings
   has_many :orders
+  has_many :notifications
 
   has_one_attached :avatar
 
