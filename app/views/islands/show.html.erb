@@ -81,6 +81,10 @@
             <%= f.submit id: 'btn-submit-booking' %>
           </div>
         <% end %>
+        <%= form_tag orders_path do %>
+          <%= hidden_field_tag 'island_id', @island.id %>
+          <%= submit_tag 'Purchase', class: 'btn btn-primary', id: 'purchase' %>
+        <% end %>
       </div>
     <% end %>
   </div>
