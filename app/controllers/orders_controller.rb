@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   def create
   booking = Booking.find(params[:booking_id])
   order  = Order.create!(booking: booking, amount: booking.total_price, state: 'pending', user: current_user)
-session = Stripe::Checkout::Session.create(
+  session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
       name: booking.island.name,

@@ -87,42 +87,39 @@
 }
 
 .island-booking-right, .user-booking-right {
-  width: 180px;
+  width: 220px;
   height: 80px;
 }
 
-.booking-waiting {
+.island-booking-right, .user-booking-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
-  .island-booking-right, .user-booking-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  i {
+    font-size: 28px;;
+  }
 
-    i {
-      font-size: 28px;;
-    }
+  .accept-booking {
+    color: $green;
+    position: absolute;
+    top: 4px;
+    right: 0px;
+  }
 
-    .accept-booking {
-      color: $green;
-      position: absolute;
-      top: 4px;
-      right: 0px;
-    }
+  .refuse-booking {
+    color: $red;
+    position: absolute;
+    bottom: 4px;
+    right: 0px;
+  }
 
-    .refuse-booking {
-      color: $red;
-      position: absolute;
-      bottom: 4px;
-      right: 0px;
-    }
-
-    .cancel-booking {
-      color: $red;
-      position: absolute;
-      right: 0;
-      top: 13px;
-    }
+  .cancel-booking {
+    color: $red;
+    position: absolute;
+    right: 0;
+    top: 26px;
   }
 }
 
@@ -165,6 +162,23 @@
     padding: 8px 16px 8px 16px;
     border-radius: 8px;
     background-color: $gray;
+  }
+
+  .btn-purchase {
+    margin-left: 16px;
+    width: 95px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #8561C1;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    &:hover {
+        transition: 1s;
+        border-radius: 1px;
+        background-color: #c3a6f4;
+        color: #8561C1;
+      }
   }
 }
 
