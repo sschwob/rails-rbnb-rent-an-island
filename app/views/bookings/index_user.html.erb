@@ -118,6 +118,8 @@
                   <% end %>
                 <% elsif booking.order.state == "paid" %>
                   <span class="booking-paid <%= "booking-state-#{booking.state.downcase}" %>"> Paid </span>
+                <% else %>
+                  <span class="<%= "booking-state-#{booking.state.downcase}" %>"><%= booking.state %></span>
                 <% end %>
               </div>
             </div>
