@@ -123,7 +123,7 @@
     margin: 0;
     margin-top: 70px;
   }
-  
+
   #show-island-images-small {
     display: none;
   }
@@ -133,7 +133,7 @@
 
   #show-island-image-big {
     border-radius: 0;
-    
+
     img {
       border-radius: 0;
     }
@@ -147,4 +147,8 @@
     text-align: center;
   }
 
+}
+
+#purchase {
+  display: none;
 }
