@@ -1,13 +1,12 @@
 class OrdersController < ApplicationController
   def create
-  island = Island.find(params[:island_id])
-  order  = Order.create!(island: island, amount: island.price_per_day, state: 'pending', user: current_user)
+  booking = Booking.find(params[:booking_id])
+  order  = Order.create!(booking: booking, amount: booking.total_price, state: 'pending', user: current_user)
 session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
-      name: island.name,
-      images: [island.photos],
-      amount: island.price_per_day_cents,
+      name: booking.island.name,
+      amount: order.amount,
       currency: 'usd',
       quantity: 1
     }],
