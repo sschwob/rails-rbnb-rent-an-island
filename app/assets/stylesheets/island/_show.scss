@@ -23,6 +23,10 @@
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+
+    &:hover {
+      cursor: zoom-in;
+    }
   }
 }
 
