@@ -103,23 +103,18 @@
                 </div>
               </div>
               <div class="user-booking-right">
+                <span class="<%= "booking-state-#{booking.state.downcase}" %>"><%= booking.state %></span>
                 <% if booking.state == "Waiting" %>
-                  <span class="<%= "booking-state-#{booking.state.downcase}" %>"><%= booking.state %></span>
                   <%= link_to cancel_booking_path(booking), method: :patch, title: 'Cancel booking', data: { toggle: 'tooltip', confirm: "Are you sure?" }, class: "cancel-booking" do %>
                     <i class="fas fa-times-circle"></i>
                   <% end %>
                 <%  elsif booking.state == "Accepted" %>
-                  <span class="<%= "booking-state-#{booking.state.downcase}" %>"><%= booking.state %></span>
                   <% unless booking.order && booking.order.state == "paid"%>
                     <%= form_tag orders_path do %>
                       <%= hidden_field_tag 'booking_id', booking.id %>
                       <%= submit_tag 'Purchase', class: 'btn btn-purchase', id: 'purchase' %>
                     <% end %>
                   <% end %>
-                <% elsif booking.order.state == "paid" %>
-                  <span class="booking-paid <%= "booking-state-#{booking.state.downcase}" %>"> Paid </span>
-                <% else %>
-                  <span class="<%= "booking-state-#{booking.state.downcase}" %>"><%= booking.state %></span>
                 <% end %>
               </div>
             </div>
