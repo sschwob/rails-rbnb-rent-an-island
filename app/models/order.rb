@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :island
+  belongs_to :booking
   monetize :amount_cents
 end
