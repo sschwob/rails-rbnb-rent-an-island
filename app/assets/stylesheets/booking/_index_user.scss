@@ -1,7 +1,7 @@
 #bookings-index {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // background-color: white;
+  // border-radius: 8px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 104px;
   margin-bottom: 24px;
   padding-top: 8px;
@@ -27,20 +27,16 @@
 }
 
 #user-islands-bookings-list {
-  border-top: 1px solid #7f8f9f;
+  // border-top: 1px solid #7f8f9f;
   padding-top: 8px;
-}
-
-.island-bookings {
-  margin: 16px auto ;
-  box-shadow: 0 0 2px rgba(0,0,0,0.2);
-  padding: 8px 8px 0 8px;
 }
 
 .island-booking {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-top: 1px solid #7f8f9f;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 
 .user-bookings-header {
@@ -51,16 +47,149 @@
 
   h3 {
     margin: 0;
+    font-weight: bold;
   }
 }
 
 .user-bookings-selector {
+  width: 230px;
   display: flex;
-  width: 200px;
+  justify-content: space-between;
+  align-items: center;
 
-  .btn-search {
-    height: 28px;
-    padding: 0 4px 0 4px;
+  .selector-name {
+    width: 90px;
     margin-left: 8px;
+  }
+
+  .select2 {
+    width: 150px;
+  }
+}
+
+.island-booking-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.island-booking-left {
+  width: 280px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+
+  > div {
+    width: 100%;
+    height: 80px;
+  }
+}
+
+.island-booking-center {
+  width: 200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+
+  > div {
+    width: 100%;
+    height: 80px;
+  }
+}
+
+.island-booking-right {
+  width: 180px;
+  height: 80px;
+}
+
+.booking-waiting {
+
+  .island-booking-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    i {
+      font-size: 28px;;
+    }
+
+    .accept-booking {
+      color: $green;
+      position: absolute;
+      top: 4px;
+      right: 0px;
+    }
+
+    .refuse-booking {
+      color: $red;
+      position: absolute;
+      bottom: 4px;
+      right: 0px;
+    }
+  }
+
+}
+
+.island-booking-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .booking-state-refused {
+    color: white;
+    padding: 8px 16px 8px 16px;
+    border-radius: 8px;
+    background-color: $red;
+  }
+
+  .booking-state-accepted {
+    color: white;
+    padding: 8px 16px 8px 16px;
+    border-radius: 8px;
+    background-color: $green;
+  }
+
+  .booking-state-waiting {
+    color: white;
+    padding: 8px 16px 8px 16px;
+    border-radius: 8px;
+    background-color: $orange;
+  }
+
+  .booking-state-canceled {
+    color: white;
+    padding: 8px 16px 8px 16px;
+    border-radius: 8px;
+    background-color: $gray;
+  }
+}
+
+@media(max-width: 770px) {
+  .island-booking-left, .island-booking-center {
+    height: 110px;
+  
+    > div {
+      height: 110px;
+    }
+  }
+  
+  .island-booking-right {
+    height: 110px;
+  }
+}
+
+@media(max-width: 510px) {
+  .island-booking-left, .island-booking-center {
+    height: 130px;
+  
+    > div {
+      height: 130px;
+    }
+  }
+  
+  .island-booking-right {
+    height: 130px;
   }
 }

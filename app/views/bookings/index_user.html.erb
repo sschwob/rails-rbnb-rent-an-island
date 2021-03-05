@@ -5,48 +5,63 @@
       <div class="user-bookings-header">
         <h3>My islands bookings</h3>
         <div class="user-bookings-selector">
-          <select class="select2" name="island-bookings-state">
+          <div class="selector-name">Island :</div>
+          <select class="select2" id="island-selector">
+            <option value="all">All</option>
+            <% current_user.islands.each do |island| %>
+              <option value=<%= island.name %>><%= island.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="user-bookings-selector">
+          <div class="selector-name">State :</div>
+          <select class="select2" id="island-bookings-state">
             <option value="all">All</option>
             <option value="waiting">Waiting</option>
             <option value="accepted">Accepted</option>
             <option value="refused">Refused</option>
             <option value="canceled">Canceled</option>
           </select>
-          <button id="island-bookings-search" class="btn btn-primary btn-search" type="button">Search</button>
         </div>
       </div>
       <div id="user-islands-bookings-list">
-        <% @user_islands.each do |island| %>
-          <div class="island-bookings">
-            <h6><strong><%= island.name %></strong></h6>
-            <% if island.bookings != [] %>
-              <% island.bookings.each do |booking| %>
-                <div class="island-booking">
-                  <strong><%= booking.user.username %></strong> has booked <strong><%= island.name %></strong> :
-                  <br>
-                  <i class="fas fa-calendar-alt"></i> from <%= booking.start_date %> to <%= booking.end_date %>
-                  <br>
-                  Length of stay : <%= (booking.end_date - booking.start_date).ceil %> days
-                  <br>
-                  Price per day : <i class="fas fa-dollar-sign"></i> <%= booking.island.price_per_day %>
-                  <br>
-                  Total price : <i class="fas fa-dollar-sign"></i> <%= (booking.end_date - booking.start_date).ceil * booking.island.price_per_day %>
-                  <br>
-                  <span>State : <%= booking.state %></span>
-                  <% if booking.state == "waiting" %>
-                    <%= link_to accept_booking_path(booking), method: :patch, title: 'Accept booking', data: { toggle: 'tooltip', confirm: "Are you sure?" } do %>
-                      <i class="fas fa-check-circle accept-booking"></i>
+        <% if @all_islands_bookings != [] %>
+          <% @all_islands_bookings.sort_by(&:created_at).each do |booking| %>
+            <div class="<%= "island-name island-#{booking.island.name.downcase}" %>" data-name=<%= "#{booking.island.name.downcase}" %>>
+              <div class="island-booking <%= "booking-#{booking.state.downcase}" %>" data-state=<%= "#{booking.state.downcase}" %>>
+                <div class="island-booking-content">
+                  <div class="island-booking-left">
+                    <div>
+                      <%= booking.created_at %>
+                      <br>
+                      <strong><%= booking.user.username %></strong> has booked <strong><%= booking.island.name %></strong>
+                      <br>
+                      <i class="fas fa-calendar-alt"></i> from <%= booking.start_date %> to <%= booking.end_date %>
+                    </div>
+                  </div>
+                  <div class="island-booking-center">
+                    <div>
+                      Length of stay : <%= (booking.end_date - booking.start_date).ceil %> days
+                      <br>
+                      <br>
+                      Total price : <i class="fas fa-dollar-sign"></i> <%= (booking.end_date - booking.start_date).ceil * booking.island.price_per_day %>
+                    </div>
+                  </div>
+                  <div class="island-booking-right">
+                    <span class="<%= "booking-state-#{booking.state.downcase}" %>"><%= booking.state %></span>
+                    <% if booking.state == "waiting" %>
+                      <%= link_to accept_booking_path(booking), method: :patch, title: 'Accept booking', data: { toggle: 'tooltip', confirm: "Are you sure?" }, class: "accept-booking" do %>
+                        <i class="fas fa-check-circle"></i>
+                      <% end %>
+                      <%= link_to refuse_booking_path(booking), method: :patch, title: 'Refuse booking', data: { toggle: 'tooltip', confirm: "Are you sure?" }, class: "refuse-booking" do %>
+                        <i class="fas fa-times-circle"></i>
+                      <% end %>
                     <% end %>
-                    <%= link_to refuse_booking_path(booking), method: :patch, title: 'Refuse booking', data: { toggle: 'tooltip', confirm: "Are you sure?" } do %>
-                      <i class="fas fa-times-circle refuse-booking"></i>
-                    <% end %>
-                  <% end %>
+                  </div>
                 </div>
-              <% end %>
-            <% else %>
-              <div class="island-booking-no"><p>No bookings for the island <strong><%= island.name %></strong> yet</p></div>
-            <% end %>
-          </div>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -56,20 +71,20 @@
     <div class="user-bookings-header">
       <h3>My bookings</h3>
       <div class="user-bookings-selector">
-        <select class="select2" name="user-bookings-state">
+        <div class="selector-name">State :</div>
+        <select class="select2" id="user-bookings-state">
           <option value="all">All</option>
           <option value="waiting">Waiting</option>
           <option value="accepted">Accepted</option>
           <option value="refused">Refused</option>
           <option value="canceled">Canceled</option>
         </select>
-        <button id="user-bookings-search" class="btn btn-primary btn-search" type="button">Search</button>
       </div>
     </div>
     <% if current_user.bookings != [] %>
     <div id="user-bookings-list">
       <% @user_bookings.each do |booking| %>
-        <div class="user-booking">
+        <div class="user-booking" data-state=<%= "#{booking.state.downcase}" %>>
           <h6>Booking for the island <strong><%= booking.island.name %></strong> | Owner : <strong><%= booking.island.user.username %></strong></h6>
           <i class="fas fa-calendar-alt"></i> from <%= booking.start_date %> to <%= booking.end_date %>
           <br>

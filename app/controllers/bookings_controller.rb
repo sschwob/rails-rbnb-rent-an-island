@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
 
   def index_user
     @user_bookings = current_user.bookings
-    @user_islands = current_user.islands
+    @all_islands_bookings = []
+    current_user.islands.each { |island| island.bookings.each { |booking| @all_islands_bookings << booking } }
     current_user.notifications.each { |notif| notif.update(to_read: false) }
   end
 
