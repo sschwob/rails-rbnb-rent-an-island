@@ -69,19 +69,15 @@
   position: relative;
 
   #notif-count {
-    text-align: center;
-    margin: 0;
-    padding: 0 0 0 2px !important;
-    font-size: 12px;
     width: 16px;
     height: 16px;
-    font-weight: bold;
-    color:white;
-    background-color: #D73B3A;
     border-radius: 50%;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: #D73B3A;
     position: absolute;
     top: -7px;
     right: 6px;
   }
 }
-
