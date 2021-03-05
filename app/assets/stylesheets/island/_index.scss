@@ -10,3 +10,20 @@
   padding-bottom: 18px;
   color: #bca5e2;
 }
+
+@media (max-width: 860px) {
+  .laptop-size {
+    display: none;
+  }
+
+  .laptop-searchbar {
+    display: none;
+  }
+
+}
+
+@media (min-width: 860px)  {
+  .phone-searchbar {
+    display: none;
+  }
+}
