@@ -1,5 +1,4 @@
 class IslandsController < ApplicationController
-  @p
   before_action :find_island, only: [:edit, :update, :show, :destroy]
 
   def index
